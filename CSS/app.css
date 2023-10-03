@@ -1,0 +1,123 @@
+.menu{
+    width: 300px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    list-style: none;
+    box-shadow: rgba(100,100,111,0.2) 0px 7px 29px 0px;
+    transform: translateX(100%);
+    transition: transform 0.35s linear;
+}
+.menu-link{
+    display: block;
+    padding: 20px 15px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee ;
+}
+.menu.is-show{
+    transform: translateX(0);
+}
+
+/*Modal*/
+.model{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.25 linear;
+}
+.model-content{
+    max-width: 600px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+
+}
+.model.is-show{
+    opacity: 1;
+    visibility: visible;
+}
+.modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #eee;
+    border-radius: 50px;
+    cursor: pointer;
+    color: #999;
+}
+.modal-desc{
+    font-size: 15px;
+    font-weight: 300;
+    text-align: center;
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+.modal-action{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0 20px;
+}
+.modal-submit,
+.modal-cancel{
+    border: 0;
+    font-style: 16px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    background-color: transparent;
+    color: #999;
+}
+.modal-submit{
+    background-color: #3d6ef7;
+    color: white;
+}
+/* noti */
+.noti{
+    display: flex;
+    grid-template-columns:1fr 3fr ;
+    column-gap: 20px;
+    width: 400px;
+    position: absolute;
+    bottom: 0;
+    left: 20;
+    border-radius: 20px;
+    transform: translateY(150%);
+    animation: noti 4s forwards 1 linear;
+}
+
+@keyframes noti{
+    20%,
+    80%{
+        transform: translateY(0);
+    }
+    100%{
+        transform: translateY(150%);
+    }
+}
+.noti-image{
+    width: 150px;
+    height: 150px;
+}
+/*140 sizing*/
+.boxed{
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    border: 6px solid;
+}
